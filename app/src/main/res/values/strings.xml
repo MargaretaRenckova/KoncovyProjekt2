@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Covid-19</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="IzolaciaTrva">Izolácia trvá po dobu 14 dní od dátumu odobratia vzorky biologického materiálu s pozitívnym výsledkom, pokiaľ sa počas posledných troch dní tejto doby u osoby nevyskytol ani jeden z klinických príznakov ochorenia. Pokiaľ sa počas posledných troch dní z doby 14 dní vyskytol u osoby akýkoľvek z klinických príznakov ochorenia, izolácia sa ukončuje až momentom, kedy posúdi osobu pozitívnu na ochorenie jej všeobecný lekár, ako spôsobilú ukončiť izoláciu.</string>
+
+    <string name="questx">V období od odberu vzorky biologického materiálu na účely testu do oznámenia pozitívneho výsledku testu je osoba povinná obmedziť kontakt s inými osobami a dodržiavať prísnu hygienu rúk a povinnosť prekrytia horných dýchacích ciest.</string>
+
+    <string name="SomPozitivny">Kontaktujte svojho všeobecného lekára, oboznámte ho s Vaším výsledkom a požiadajte o vydanie potvrdenia o PN. Kontaktujte všetkých, s ktorými ste boli posledných 14 dní v úzkom kontakte bez rúška s pokynom, aby zostali v domácej izolácií a aby sa zaregistrovali na vyšetrenie.Čakajte na pokyny od príslušného RÚVZ (Pre ich mimoriadnu vyťaženosť to môže trvať niekoľko dní.) </string>
+
+    <string name="UzkyKontakt">Osobný/fyzický kontakt s prípadom COVID-19 do dvoch metrov po dobu dlhšiu ako 15 minút, nechránený priamy kontakt v uzavretom prostredí dlhší ako 15 minút </string>
+
+    <string name="BeznyKontakt">Nízke riziko nákazy, osobný kontakt s prípadom COVID-19 do dvoch metrov kratší ako 15 minút, kontakt s prípadom v uzavretom prostredí kratší ako 15 minút</string>
+
+    <string name="UkoncenieKaranteny">Karanténu nesmiete skončiť skôr ako 14 dní od vykonania odberu alebo skôr ako 14 dní od objavenia sa prvých príznakov. Izoláciu je po uplynutí 14-dňovej lehoty možné ukončiť, pokiaľ sa u osoby počas posledných troch dní nevyskytol ani jeden z klinických príznakov. Ďalší test nie je potrebný. V prípade, že sa u osoby objavil akýkoľvek z menovaných príznakov, izoláciu možno ukončiť až na základe rozhodnutia jejvšeobecného lekára, ktorý posúdi, či je spôsobilá ukončiť izoláciu. </string>
+
+    <string name="RizikoNakazenia">Všetci sú vystavení riziku infekcie ochorením COVID-19, pričom u niektorých skupín obyvateľstva existuje vyššie riziko vzniku závažného priebehu ochorenia.Príznaky u detí zvyknú byť miernejšie ako u dospelých.</string>
+
+    <string name="sirenie">Najväčšia hrozba nového SARS-CoV-2 spočíva v tom, že sa šíri vzdušnou cestou (kvapôčkovou nákazou) a že ho môžu prenášať aj také infikované osoby, ktoré nemajú žiadne alebo len veľmi mierne vonkajšie prejavy ochorenia.</string>
+
+    <string name="priznaky">•horúčka nad 38°C \n•kašeľ \n•sťažené dýchanie \n•bolesť svalov \n•bolesť hlavy \n•únava, malátnosť \n•strata čuchu a chuti</string>
+
+    <string name="prevencia">•vyhnúť sa kontaktu s chorými ľuďmi, najmä s kašľom \n \n•vyhnúť sa návšteve trhov a miest, kde sa manipuluje so živými alebo uhynutými zvieratami\n \n•dodržiavať všeobecné pravidlá týkajúce sa hygieny rúk a hygieny potravín \n \n•pred jedlom, po použití toalety a po akomkoľvek kontakte so zvieratami si umyte ruky mydlom a vodou alebo použite dezinfekčný roztok na báze alkoholu\n \n•vyhýbajte sa kontaktu so zvieratami, ich výkalmi alebo trusom\n \n•kamkoľvek cestujete, dodržiavajte všeobecné pravidlá týkajúce sa hygieny rúk a potravín.</string>
+
+</resources>

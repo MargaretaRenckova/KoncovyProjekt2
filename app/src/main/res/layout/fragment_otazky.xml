@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+            <com.ms.square.android.expandabletextview.ExpandableTextView
+                android:id="@+id/expand_tex_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                expandableTextView:animDuration="150"
+                expandableTextView:maxCollapsedLines="0">
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:paddingBottom="10sp"
+                    android:text='Izolácia osôb pozitívnych na ochorenie'
+                    android:textColor="@color/purple_700"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@id/expandable_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="start"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/slabasiva"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@id/expand_collapse"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dip"
+                    android:layout_gravity="center"
+                    android:background="@color/siva2"
+                    android:minWidth="30dip"
+                    android:minHeight="30dip"
+                    android:padding="16dp"
+                    android:tint="#FFFFFF" />
+
+            </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+            <com.ms.square.android.expandabletextview.ExpandableTextView
+                android:id="@+id/expand_tex_view2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                expandableTextView:animDuration="150"
+                expandableTextView:maxCollapsedLines="0">
+
+                <TextView
+                    android:id="@+id/quest2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:paddingBottom="10sp"
+                    android:text='Čo je úzky kontakt ?'
+                    android:textColor="@color/purple_700"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@id/expandable_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="start"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/slabasiva"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@id/expand_collapse"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dip"
+                    android:layout_gravity="center"
+                    android:background="@color/siva2"
+                    android:minWidth="30dip"
+                    android:minHeight="30dip"
+                    android:padding="16dp"
+                    android:tint="#FFFFFF" />
+
+            </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+            <com.ms.square.android.expandabletextview.ExpandableTextView
+                android:id="@+id/expand_tex_view3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                expandableTextView:animDuration="150"
+                expandableTextView:maxCollapsedLines="0">
+
+                <TextView
+                    android:id="@+id/quest3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:paddingBottom="10sp"
+                    android:text='Bežný kontakt'
+                    android:textColor="@color/purple_700"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@id/expandable_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="start"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/slabasiva"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@id/expand_collapse"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dip"
+                    android:layout_gravity="center"
+                    android:background="@color/siva2"
+                    android:minWidth="30dip"
+                    android:minHeight="30dip"
+                    android:padding="16dp"
+                    android:tint="#FFFFFF" />
+
+            </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+            <com.ms.square.android.expandabletextview.ExpandableTextView
+                android:id="@+id/expand_tex_view4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                expandableTextView:animDuration="150"
+                expandableTextView:maxCollapsedLines="0">
+
+                <TextView
+                    android:id="@+id/quest4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:paddingBottom="10sp"
+                    android:text='Som covid pozitívny'
+                    android:textColor="@color/purple_700"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@id/expandable_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="start"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/slabasiva"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@id/expand_collapse"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dip"
+                    android:layout_gravity="center"
+                    android:background="@color/siva2"
+                    android:minWidth="30dip"
+                    android:minHeight="30dip"
+                    android:padding="16dp"
+                    android:tint="#FFFFFF" />
+
+            </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+            <com.ms.square.android.expandabletextview.ExpandableTextView
+                android:id="@+id/expand_tex_view5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                expandableTextView:animDuration="150"
+                expandableTextView:maxCollapsedLines="0">
+
+                <TextView
+                    android:id="@+id/quest5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:paddingBottom="10sp"
+                    android:text='Ukončenie karantény'
+                    android:textColor="@color/purple_700"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@id/expandable_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="start"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/slabasiva"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@id/expand_collapse"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dip"
+                    android:layout_gravity="center"
+                    android:background="@color/siva2"
+                    android:minWidth="30dip"
+                    android:minHeight="30dip"
+                    android:padding="16dp"
+                    android:tint="#FFFFFF" />
+
+            </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+            <com.ms.square.android.expandabletextview.ExpandableTextView
+                android:id="@+id/expand_tex_view6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                expandableTextView:animDuration="150"
+                expandableTextView:maxCollapsedLines="0">
+
+                <TextView
+                    android:id="@+id/quest6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:paddingBottom="10sp"
+                    android:text='Kto sa može nakaziť ?'
+                    android:textColor="@color/purple_700"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@id/expandable_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="start"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/slabasiva"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@id/expand_collapse"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dip"
+                    android:layout_gravity="center"
+                    android:background="@color/siva2"
+                    android:minWidth="30dip"
+                    android:minHeight="30dip"
+                    android:padding="16dp"
+                    android:tint="#FFFFFF" />
+
+            </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

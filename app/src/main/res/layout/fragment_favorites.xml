@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/sirenie"
+                android:layout_width="wrap_content"
+                android:layout_height="1945.07dp"
+                expandableTextView:srcCompat="@drawable/sirenie" />
+
+            <com.ms.square.android.expandabletextview.ExpandableTextView
+                android:id="@+id/expand_tex_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                expandableTextView:animDuration="150"
+                expandableTextView:maxCollapsedLines="0">
+
+                <TextView
+                    android:id="@id/expandable_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="start"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/siva2"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+
+                <ImageButton
+                    android:id="@id/expand_collapse"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dip"
+                    android:layout_gravity="center"
+                    android:background="@color/siva2"
+                    android:minWidth="30dip"
+                    android:minHeight="30dip"
+                    android:padding="16dp"
+                    android:tint="#FFFFFF" />
+
+            </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+            <ImageView
+                android:id="@+id/skuskaa"
+                android:layout_width="match_parent"
+                android:layout_height="1945.07px"
+                expandableTextView:srcCompat="@drawable/priznaky2" />
+
+            <com.ms.square.android.expandabletextview.ExpandableTextView
+                android:id="@+id/expand_tex_view2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                expandableTextView:animDuration="150"
+                expandableTextView:maxCollapsedLines="0">
+
+                <TextView
+                    android:id="@id/expandable_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="start"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/siva2"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+
+                <ImageButton
+                    android:id="@id/expand_collapse"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dip"
+                    android:layout_gravity="center"
+                    android:background="@color/purple_500"
+                    android:minWidth="30dip"
+                    android:minHeight="30dip"
+                    android:padding="16dp"
+                    android:tint="#FFFFFF" />
+
+            </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+            <ImageView
+                android:id="@+id/prevencia"
+                android:layout_width="match_parent"
+                android:layout_height="1945px"
+                expandableTextView:srcCompat="@drawable/prevencia3" />
+
+            <com.ms.square.android.expandabletextview.ExpandableTextView
+                android:id="@+id/expand_tex_view3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                expandableTextView:animDuration="150"
+                expandableTextView:maxCollapsedLines="0">
+
+                <TextView
+                    android:id="@id/expandable_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="start"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="5dp"
+                    android:textColor="@color/siva2"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@id/expand_collapse"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dip"
+                    android:layout_gravity="center"
+                    android:background="@color/siva2"
+                    android:minWidth="30dip"
+                    android:minHeight="30dip"
+                    android:padding="16dp"
+                    android:tint="#FFFFFF" />
+
+            </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

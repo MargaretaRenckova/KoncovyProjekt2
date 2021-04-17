@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/activity_main">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/testy"
+            android:icon="@drawable/test"
+            android:title="Moje testy" />
+
+        <item
+        android:id="@+id/telefon"
+        android:icon="@drawable/telephone"
+        android:title="Kontakty" />
+
+        <item
+            android:id="@+id/qaa"
+            android:icon="@drawable/qanda"
+            android:title="Q &amp; A" />
+        <item
+        android:id="@+id/karantena"
+        android:icon="@drawable/mask"
+        android:title="Karanténa" />
+
+        <item
+            android:id="@+id/info"
+            android:icon="@drawable/info"
+            android:title="Informácie" />
+
+        <item
+            android:id="@+id/ine"
+            android:icon="@drawable/add"
+            android:title="dalsi fragment" />
+    </group>
+
+</menu>

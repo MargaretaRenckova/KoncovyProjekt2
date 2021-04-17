@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Kontakty">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/siva2"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:corner_radius="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:text="RÚVZ Bratislava"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    android:autoLink="phone"/>
+
+                <TextView
+                    android:id="@+id/bratislava"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:clickable="true"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:text="0917 426 075"
+                    android:textColor="#C03B2F"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+            </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+            <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/siva2"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:corner_radius="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:text="RÚVZ Košice"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/kosice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:text="0918 389 841"
+                    android:textColor="#df9f3e"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:clickable="true"/>
+            </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+            <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/siva2"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:corner_radius="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:text="RÚVZ Trnava"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/trnava"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:text="0905 903 053"
+                    android:textColor="#C03B2F"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:clickable="true"/>
+            </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+            <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/siva2"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:corner_radius="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:text="RÚVZ Trenčín"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/trencin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:text="0911 763 203"
+                    android:textColor="#df9f3e"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:clickable="true"/>
+
+            </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+            <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/siva2"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:corner_radius="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:text="RÚVZ Nitra"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/nitra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:text="0948 495 915"
+                    android:textColor="#C03B2F"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:clickable="true"/>
+            </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+            <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/siva2"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:corner_radius="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:text="RÚVZ Žilina"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/zilina"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:text="0911 600 203"
+                    android:textColor="#df9f3e"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:clickable="true"/>
+            </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+            <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/siva2"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:corner_radius="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:text="RÚVZ Banská Bystrica"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/bansbystrica"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:text="0918 659 580"
+                    android:textColor="#C03B2F"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:clickable="true"/>
+            </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+            <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/siva2"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:corner_radius="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:text="RÚVZ Prešov"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/presov"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:text="0911 908 823"
+                    android:textColor="#df9f3e"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:clickable="true"/>
+            </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

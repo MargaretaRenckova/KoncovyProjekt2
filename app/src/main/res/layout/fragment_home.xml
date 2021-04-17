@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingBottom="5dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/refresh"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/refresh"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/aktualizacia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Posledná aktualizácia:" />
+            </LinearLayout>
+
+            <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@color/siva2"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:corner_radius="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="top|left"
+                    android:paddingTop="5dp"
+                    android:text="Počet vykonaných PCR  testov"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageView"
+                            style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
+                            android:layout_width="64dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="clip_vertical"
+                            android:src="@drawable/up" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/PCRVykonane"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|right"
+                            android:background="#00FFFFFF"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="bottom|right"
+                            android:textColor="#41EE70"
+                            android:textSize="27sp" />
+
+                        <TextView
+                            android:id="@+id/PCRPlus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|right"
+                            android:background="#00FFFFFF"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="bottom|right"
+                            android:textColor="#41EE70"
+                            android:textSize="25sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="2"
+                    android:background="@color/siva2"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    app:corner_radius="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00FFFFFF"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="top|left"
+                        android:text="Umrtia"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imageView2"
+                                android:layout_width="32dp"
+                                android:layout_height="33dp"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/skull" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/umrtiaPlus"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#00FFFFFF"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:gravity="bottom|right"
+                                android:textColor="#FA4D51"
+                                android:textSize="27sp" />
+
+                            <TextView
+                                android:id="@+id/umrtiaCelkom"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#00FFFFFF"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:gravity="bottom|right"
+                                android:textColor="#FA4D51"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+                <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="3"
+                    android:background="@color/siva2"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    app:corner_radius="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00FFFFFF"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="top|left"
+                        android:text="napr Antigen"
+                        android:textColor="#FFFDFC"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imageView3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                app:srcCompat="@drawable/antigen" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/antigenPlus"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#00FFFFFF"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:gravity="bottom|right"
+                                android:textColor="#F785FF"
+                                android:textSize="27sp" />
+
+                            <TextView
+                                android:id="@+id/antigenVykonane"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="bottom|right"
+                                android:textColor="#F785FF"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="2"
+                    android:background="@color/siva2"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    app:corner_radius="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00FFFFFF"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="top|left"
+                        android:text="Počet hospitalizácií"
+                        android:textColor="#FAFAFA"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/median"
+                                android:layout_width="match_parent"
+                                android:layout_height="46dp"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/median" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/hospitalizacieCelkom"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#00FFFFFF"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:gravity="bottom|right"
+                                android:textColor="#7b9cd6"
+                                android:textSize="27sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+                <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="3"
+                    android:background="@color/siva2"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    app:corner_radius="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00FFFFFF"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="top|left"
+                        android:text="Celkový počet otestovaných PCR testami"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/pocty"
+                                android:layout_width="match_parent"
+                                android:layout_height="46dp"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/people" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/PCRCelkom"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#00FFFFFF"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:gravity="bottom|right"
+                                android:textColor="#99DFDD"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+            </LinearLayout>
+
+            <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:background="@color/siva2"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:corner_radius="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="top|left"
+                    android:text="Očkovanie"
+                    android:textColor="#FFFDFC"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/vaccineyellow" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="right"
+                            android:text="Prvá dávka"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/PDPlus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#00FFFFFF"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="bottom|right"
+                            android:textColor="#df9f3e"
+                            android:textSize="27sp" />
+
+                        <TextView
+                            android:id="@+id/antigenVykonane"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="bottom|right"
+                            android:text="Druhá dávka"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/DDPlus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="bottom|right"
+                            android:textColor="#df9f3e"
+                            android:textSize="27sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

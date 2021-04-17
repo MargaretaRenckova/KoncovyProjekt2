@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_green_light"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:text="REGISTRÁCIA e-KARANTÉNA"
+                android:textColor="@color/purple_700"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#532B2B"
+                android:textSize="22sp" />
+
+            <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:corner_radius="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="top|left"
+                    android:text="MENO"
+                    android:textColor="@color/purple_700"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:hint="Meno Priezvisko"
+                    android:inputType="textPersonName"
+                    android:textColor="#000000"
+                    android:textColorHint="#AFAFAF" />
+
+            </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+            <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:corner_radius="10dp">
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="TELEFÓNNE ČÍSLO"
+                    android:textColor="@color/purple_700" />
+
+                <EditText
+                    android:id="@+id/phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="+421 "
+                    android:inputType="phone"
+                    android:maxLength="15"
+                    android:textColor="#000000"
+                    android:textColorHint="#AFAFAF" />
+            </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+            <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:corner_radius="10dp">
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="DÁTUM NARODENIA"
+                    android:textColor="@color/purple_700" />
+
+                <EditText
+                    android:id="@+id/dateOfBirth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="dd.mm.rrrr"
+                    android:inputType="textPersonName"
+                    android:textColorHint="#AFAFAF" />
+
+            </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+            <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:corner_radius="10dp">
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="RODNÉ ČÍSLO"
+                    android:textColor="@color/purple_700" />
+
+                <EditText
+                    android:id="@+id/birthNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="000000/0000"
+                    android:inputType="number"
+                    android:maxLength="11"
+                    android:textColorHint="#AFAFAF" />
+
+            </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+            <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:corner_radius="10dp">
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="COVID-19 PASS"
+                    android:textColor="@color/purple_700" />
+
+                <EditText
+                    android:id="@+id/covidPass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="00000000"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:textColorHint="#AFAFAF" />
+
+            </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+            <Button
+                android:id="@+id/odoslatButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="90dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginEnd="90dp"
+                android:layout_marginRight="90dp"
+                android:onClick="odosli"
+                android:text="Odoslať"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/purple_700" />
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>
