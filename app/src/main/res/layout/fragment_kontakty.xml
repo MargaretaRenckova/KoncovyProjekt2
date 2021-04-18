@@ -47,7 +47,7 @@
                     android:clickable="true"
                     android:fontFamily="@font/montserrat_medium"
                     android:gravity="center"
-                    android:text="0917 426 075"
+                    android:text="+421 917 426 075"
                     android:textColor="#C03B2F"
                     android:textSize="30sp"
                     android:textStyle="bold" />
@@ -78,13 +78,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#00FFFFFF"
+                    android:clickable="true"
                     android:fontFamily="@font/montserrat_medium"
                     android:gravity="center"
-                    android:text="0918 389 841"
+                    android:text="+421 918 389 841"
                     android:textColor="#df9f3e"
                     android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:clickable="true"/>
+                    android:textStyle="bold" />
             </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
 
             <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
@@ -112,13 +112,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#00FFFFFF"
+                    android:clickable="true"
                     android:fontFamily="@font/montserrat_medium"
                     android:gravity="center"
-                    android:text="0905 903 053"
+                    android:text="+421 905 903 053"
                     android:textColor="#C03B2F"
                     android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:clickable="true"/>
+                    android:textStyle="bold" />
             </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
 
             <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
@@ -146,13 +146,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#00FFFFFF"
+                    android:clickable="true"
                     android:fontFamily="@font/montserrat_medium"
                     android:gravity="center"
-                    android:text="0911 763 203"
+                    android:text="+421 911 763 203"
                     android:textColor="#df9f3e"
                     android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:clickable="true"/>
+                    android:textStyle="bold" />
 
             </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
 
@@ -181,13 +181,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#00FFFFFF"
+                    android:clickable="true"
                     android:fontFamily="@font/montserrat_medium"
                     android:gravity="center"
-                    android:text="0948 495 915"
+                    android:text="+421 948 495 915"
                     android:textColor="#C03B2F"
                     android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:clickable="true"/>
+                    android:textStyle="bold" />
             </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
 
             <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
@@ -215,13 +215,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#00FFFFFF"
+                    android:clickable="true"
                     android:fontFamily="@font/montserrat_medium"
                     android:gravity="center"
-                    android:text="0911 600 203"
+                    android:text="+421 911 600 203"
                     android:textColor="#df9f3e"
                     android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:clickable="true"/>
+                    android:textStyle="bold" />
             </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
 
             <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
@@ -249,13 +249,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#00FFFFFF"
+                    android:clickable="true"
                     android:fontFamily="@font/montserrat_medium"
                     android:gravity="center"
-                    android:text="0918 659 580"
+                    android:text="+421 918 659 580"
                     android:textColor="#C03B2F"
                     android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:clickable="true"/>
+                    android:textStyle="bold" />
             </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
 
             <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
@@ -283,13 +283,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#00FFFFFF"
+                    android:clickable="true"
                     android:fontFamily="@font/montserrat_medium"
                     android:gravity="center"
-                    android:text="0911 908 823"
+                    android:text="+421 911 908 823"
                     android:textColor="#df9f3e"
                     android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:clickable="true"/>
+                    android:textStyle="bold" />
             </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
 
         </LinearLayout>
