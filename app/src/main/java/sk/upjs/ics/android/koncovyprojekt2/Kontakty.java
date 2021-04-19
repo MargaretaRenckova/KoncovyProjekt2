@@ -35,7 +35,6 @@ public class Kontakty extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            System.out.println("Ahoj");
 
 
         }
