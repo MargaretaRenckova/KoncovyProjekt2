@@ -28,4 +28,8 @@
 
     <string name="prevencia">•vyhnúť sa kontaktu s chorými ľuďmi, najmä s kašľom \n \n•vyhnúť sa návšteve trhov a miest, kde sa manipuluje so živými alebo uhynutými zvieratami\n \n•dodržiavať všeobecné pravidlá týkajúce sa hygieny rúk a hygieny potravín \n \n•pred jedlom, po použití toalety a po akomkoľvek kontakte so zvieratami si umyte ruky mydlom a vodou alebo použite dezinfekčný roztok na báze alkoholu\n \n•vyhýbajte sa kontaktu so zvieratami, ich výkalmi alebo trusom\n \n•kamkoľvek cestujete, dodržiavajte všeobecné pravidlá týkajúce sa hygieny rúk a potravín.</string>
 
+    <string name="ockovanie">Požiadať o očkovanie môžu všetci, ktorí patria do aktuálne otvorenej fázy a taktiež tí, ktorí patria do predchádzajúcich fáz očkovania. \n \nNapríklad: Je otvorená 6. fáza a ja patrím do 1. fázy, môžem teda požiadať o očkovanie. Ak by som bol napríklad v 7. fáze, zatiaľ nemôžem požiadať o očkovanie.</string>
+
+    <string name="covidautomat">Systém pre monitorovanie vývoja epidémie a prijímanie protiepidemických opatrenia v závislosti od intenzity šírenia SARSCoV-2 (Covid-19)</string>
+
 </resources>

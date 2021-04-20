@@ -314,6 +314,106 @@
 
             </com.ms.square.android.expandabletextview.ExpandableTextView>
 
+            <com.ms.square.android.expandabletextview.ExpandableTextView
+                android:id="@+id/expand_tex_view7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                expandableTextView:animDuration="150"
+                expandableTextView:maxCollapsedLines="0">
+
+                <TextView
+                    android:id="@+id/ockovanieOtazka"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:paddingBottom="10sp"
+                    android:text="Kedy sa môžem prihlásiť na očkovanie ?"
+                    android:textColor="@color/purple_700"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@id/expandable_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="start"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/slabasiva"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@id/expand_collapse"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dip"
+                    android:layout_gravity="center"
+                    android:background="@color/siva2"
+                    android:minWidth="30dip"
+                    android:minHeight="30dip"
+                    android:padding="16dp"
+                    android:tint="#FFFFFF" />
+
+            </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+            <com.ms.square.android.expandabletextview.ExpandableTextView
+                android:id="@+id/expand_tex_view8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                expandableTextView:animDuration="150"
+                expandableTextView:maxCollapsedLines="0">
+
+                <TextView
+                    android:id="@+id/covidautomat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:paddingBottom="10sp"
+                    android:text="Čo je covid automat?"
+                    android:textColor="@color/purple_700"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@id/expandable_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="start"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/slabasiva"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@id/expand_collapse"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dip"
+                    android:layout_gravity="center"
+                    android:background="@color/siva2"
+                    android:minWidth="30dip"
+                    android:minHeight="30dip"
+                    android:padding="16dp"
+                    android:tint="#FFFFFF" />
+
+            </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+
+
 
         </LinearLayout>
     </ScrollView>

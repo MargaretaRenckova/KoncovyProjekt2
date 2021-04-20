@@ -1,18 +1,12 @@
 package sk.upjs.ics.android.koncovyprojekt2;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
-import android.provider.CallLog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.widget.AdapterView;
 import android.widget.TextView;
 
 public class Kontakty extends Fragment {

@@ -4,14 +4,11 @@ import android.content.AsyncQueryHandler;
 import android.content.ContentValues;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.Layout;
-import android.text.style.AlignmentSpan;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CalendarView;
-import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
@@ -27,7 +24,6 @@ import java.util.Calendar;
 import sk.upjs.ics.android.koncovyprojekt2.provider.NoteContentProvider;
 import sk.upjs.ics.android.koncovyprojekt2.provider.Provider;
 
-import static android.view.Gravity.CENTER;
 import static sk.upjs.ics.android.koncovyprojekt2.Defaults.DISMISS_ACTION;
 import static sk.upjs.ics.android.koncovyprojekt2.Defaults.NO_COOKIE;
 

@@ -1,9 +1,11 @@
 package sk.upjs.ics.android.koncovyprojekt2;
+
 import android.content.DialogInterface;
 import android.database.ContentObserver;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
+
 
 public interface Defaults {
     /**
@@ -52,12 +54,12 @@ public interface Defaults {
      * method call.
      */
     public static final String NO_NULL_COLUMN_HACK = null;
-/**
- * Denotes a missing or not-yet specified Cursor. Usually used in the
- * {@link android.widget.SimpleCursorAdapter} constructor to denote
- * a cursor which will be set later via Loader.
- */
-public static final Cursor NO_CURSOR = null;
+    /**
+     * Denotes a missing or not-yet specified Cursor. Usually used in the
+     * {@link android.widget.SimpleCursorAdapter} constructor to denote
+     * a cursor which will be set later via Loader.
+     */
+    public static final Cursor NO_CURSOR = null;
     /**
      * Denotes a default or missing ContentObserver
      */

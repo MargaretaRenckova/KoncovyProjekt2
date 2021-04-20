@@ -1,22 +1,11 @@
 package sk.upjs.ics.android.koncovyprojekt2;
-import android.app.AlertDialog;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CalendarView;
-import android.widget.ImageView;
-import android.widget.RadioGroup;
-import android.widget.TextView;
-
 import com.ms.square.android.expandabletextview.ExpandableTextView;
 
-import java.util.Calendar;
-
-import static sk.upjs.ics.android.koncovyprojekt2.Defaults.DISMISS_ACTION;
 
 public class Otazky extends Fragment {
     public Otazky() {
@@ -59,6 +48,12 @@ public class Otazky extends Fragment {
 
         ExpandableTextView textView6 = (ExpandableTextView) frameLayout.findViewById(R.id.expand_tex_view6);
         textView6.setText(getString(R.string.RizikoNakazenia));
+
+        ExpandableTextView textView7 = (ExpandableTextView) frameLayout.findViewById(R.id.expand_tex_view7);
+        textView7.setText(getString(R.string.ockovanie));
+
+        ExpandableTextView textView8 = (ExpandableTextView) frameLayout.findViewById(R.id.expand_tex_view8);
+        textView8.setText(getString(R.string.covidautomat));
 
 
         return frameLayout;

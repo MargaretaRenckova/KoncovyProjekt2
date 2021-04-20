@@ -1,6 +1,6 @@
 package sk.upjs.ics.android.koncovyprojekt2.provider;
 
-    import android.provider.BaseColumns;
+import android.provider.BaseColumns;
 
 public interface Provider {
     public interface Test extends BaseColumns {
