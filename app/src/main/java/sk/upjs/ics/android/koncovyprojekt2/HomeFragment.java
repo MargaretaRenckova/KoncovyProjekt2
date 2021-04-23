@@ -28,7 +28,6 @@ public class HomeFragment extends Fragment {
     private TextView AntigenVykonane;
     private TextView AntigenPlus;
     private TextView PCRCelkom;
-    private TextView PDVykonane;
     private TextView PDPlus;
     private TextView PDCelkom;
     private TextView DDPlus;
@@ -51,7 +50,9 @@ public class HomeFragment extends Fragment {
         AntigenPlus = frameLayout.findViewById(R.id.antigenPlus);
         PCRCelkom = frameLayout.findViewById(R.id.PCRCelkom);
         PDPlus = frameLayout.findViewById(R.id.PDPlus);
+        PDCelkom = frameLayout.findViewById(R.id.PDCelkom);
         DDPlus = frameLayout.findViewById(R.id.DDPlus);
+        DDCelkom = frameLayout.findViewById(R.id.DDCelkom);
         hospitalizacieCelkom = frameLayout.findViewById(R.id.hospitalizacieCelkom);
         aktualizacia = frameLayout.findViewById(R.id.aktualizacia);
 
@@ -125,6 +126,16 @@ public class HomeFragment extends Fragment {
                             string11 = peknyDatum(string11);
                             aktualizacia.setText("");
                             aktualizacia.setText("Posledná aktualizácia: " + string11);
+
+                            String string12 = response.getString("vacinatedFirstDose");
+                            string12 = customFormat("###,###,###", Integer.parseInt(string12));
+                            PDCelkom.setText("");
+                            PDCelkom.append(string12);
+
+                            String string13 = response.getString("vacinatedSecondDose");
+                            string13 = customFormat("###,###,###", Integer.parseInt(string13));
+                            DDCelkom.setText("");
+                            DDCelkom.append(string13);
                         } catch (JSONException e) {
                             Toast.makeText(getActivity(), "Chyba pri načítaní dát", Toast.LENGTH_SHORT).show();
                             e.printStackTrace();

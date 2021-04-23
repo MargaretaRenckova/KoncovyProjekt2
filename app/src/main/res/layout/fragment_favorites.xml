@@ -18,9 +18,9 @@
 
             <ImageView
                 android:id="@+id/sirenie"
-                android:layout_width="wrap_content"
-                android:layout_height="1945.07dp"
-                expandableTextView:srcCompat="@drawable/sirenie" />
+                android:layout_width="match_parent"
+                android:layout_height="750dip"
+                app:srcCompat="@drawable/sirenie" />
 
             <com.ms.square.android.expandabletextview.ExpandableTextView
                 android:id="@+id/expand_tex_view"
@@ -58,9 +58,9 @@
             </com.ms.square.android.expandabletextview.ExpandableTextView>
 
             <ImageView
-                android:id="@+id/skuskaa"
+                android:id="@+id/priznaky"
                 android:layout_width="match_parent"
-                android:layout_height="1945.07px"
+                android:layout_height="750dip"
                 expandableTextView:srcCompat="@drawable/priznaky2" />
 
             <com.ms.square.android.expandabletextview.ExpandableTextView
@@ -101,7 +101,7 @@
             <ImageView
                 android:id="@+id/prevencia"
                 android:layout_width="match_parent"
-                android:layout_height="1945px"
+                android:layout_height="750dip"
                 expandableTextView:srcCompat="@drawable/prevencia3" />
 
             <com.ms.square.android.expandabletextview.ExpandableTextView
