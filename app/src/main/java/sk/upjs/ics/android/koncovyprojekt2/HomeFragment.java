@@ -1,5 +1,4 @@
 package sk.upjs.ics.android.koncovyprojekt2;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;

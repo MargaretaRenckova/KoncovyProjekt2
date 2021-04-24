@@ -8,10 +8,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
 import static sk.upjs.ics.android.koncovyprojekt2.Defaults.DISMISS_ACTION;
 
 

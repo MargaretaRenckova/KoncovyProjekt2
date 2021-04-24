@@ -3,9 +3,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import sk.upjs.ics.android.koncovyprojekt2.Defaults;
-
 import static android.provider.BaseColumns._ID;
 import static sk.upjs.ics.android.koncovyprojekt2.Defaults.DEFAULT_CURSOR_FACTORY;
 import static sk.upjs.ics.android.koncovyprojekt2.provider.Provider.Test.TABLE_NAME;
