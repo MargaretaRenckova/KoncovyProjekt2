@@ -45,7 +45,7 @@ public class SearchFragment extends Fragment {
                 builder.setView(customLayout);
                 builder.create();
 
-                final TextView txtname = customLayout.findViewById(R.id.meno);
+                final TextView txtname = customLayout.findViewById(R.id.menoBuilder);
                 txtname.setText(menoString);
                 final TextView txtphone=customLayout.findViewById(R.id.cislo);
                 txtphone.setText(cisloString);

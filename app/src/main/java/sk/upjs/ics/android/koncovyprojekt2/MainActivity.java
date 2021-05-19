@@ -2,6 +2,8 @@ package sk.upjs.ics.android.koncovyprojekt2;
 import android.app.AlertDialog;
 import android.content.AsyncQueryHandler;
 import android.content.ContentValues;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -33,10 +35,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private static final int DELETE_TEST_TOKEN = 0;
     private static final int UPDATE_TEST_TOKEN = 0;
     private DrawerLayout drawer;
+    public static SharedPreferences settings;
+    public static String meno;
+    public static String priezvisko;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        settings = getSharedPreferences("DATA", Context.MODE_PRIVATE);
+        meno = settings.getString("MENO", "");
+        priezvisko = settings.getString("PRIEZVISKO","");
         setContentView(R.layout.activity_main);
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
@@ -51,6 +59,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
         }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("MENO", meno);
+        editor.putString("PRIEZVISKO", priezvisko);
+        editor.apply();
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
