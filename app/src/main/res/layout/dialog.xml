@@ -4,136 +4,235 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#22FFFFFF"
+    android:background="#FFFFFF"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/montserrat_medium"
-        android:gravity="center"
-        android:text="Platnosť testu : "
-        android:textColor="#000000" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
-        android:orientation="horizontal">
-
-        <RadioGroup
-            android:id="@+id/days"
+    <ScrollView android:layout_height="match_parent"
+        android:layout_width="match_parent">
+        <LinearLayout android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/day7"
+            android:orientation="vertical">
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:checked="true"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/montserrat_medium"
-                android:text="7 dní"
+                android:gravity="center"
+                android:text="Test : "
+                android:textColor="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/typTestu"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/Anti_test"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/purple_700"
+                        android:checked="false"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Antigénový"
+                        android:textColor="#000000" />
+
+                    <RadioButton
+                        android:id="@+id/PCR_test"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/purple_700"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="RT-PCR Test" />
+
+                </RadioGroup>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginRight="30dp"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/pozitnegat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <RadioButton
+                        android:id="@+id/negativita"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:buttonTint="@color/purple_700"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:linksClickable="true"
+                        android:text="Negatívny" />
+
+                    <RadioButton
+                        android:id="@+id/pozitivita"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/purple_700"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Pozitívny"
+                        android:textColor="#000000" />
+
+
+                </RadioGroup>
+
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:text="Dátum vykonania testu :"
+                android:textColor="#000000" />
+
+            <CalendarView
+                android:id="@+id/datumvykonanietestu"
+                android:layout_width="match_parent"
+                android:layout_height="301dp"
+                android:theme="@style/montserrat_text" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:text="Očkovanie"
                 android:textColor="#000000"
-                android:buttonTint="@color/purple_700"/>
+                tools:ignore="HardcodedText" />
 
-            <RadioButton
-                android:id="@+id/day14"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/montserrat_medium"
-                android:text="14 dní"
-                android:buttonTint="@color/purple_700"/>
-
-            <RadioButton
-                android:id="@+id/day21"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/montserrat_medium"
-                android:text="21 dní"
-                android:buttonTint="@color/purple_700"/>
-        </RadioGroup>
-
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/montserrat_medium"
-        android:gravity="center"
-        android:text="Typ testu : "
-        android:textColor="#000000"
-        tools:ignore="HardcodedText" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:orientation="horizontal">
-
-        <RadioGroup
-            android:id="@+id/tests"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            >
-
-            <RadioButton
-                android:id="@+id/Anti_test"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_weight="1"
-                android:checked="true"
-                android:fontFamily="@font/montserrat_medium"
-                android:text="Antigénový test"
-                android:buttonTint="@color/purple_700"/>
+                android:orientation="vertical">
 
-            <RadioButton
-                android:id="@+id/PCR_test"
-                android:layout_width="wrap_content"
+                <RadioGroup
+                    android:id="@+id/doses"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/first_dose"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/purple_700"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Prvá dávka" />
+
+                    <RadioButton
+                        android:id="@+id/second_dose"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/purple_700"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Druhá dávka" />
+
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <RadioGroup
+                    android:id="@+id/firmy"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="80dp"
+                    android:visibility="gone">
+
+                    <RadioButton
+                        android:id="@+id/pfizer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:buttonTint="@color/purple_700"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Pfizer/BioNTech" />
+
+                    <RadioButton
+                        android:id="@+id/moderna"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/purple_700"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Moderna" />
+
+
+                    <RadioButton
+                        android:id="@+id/SputnikV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/purple_700"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Sputnik V" />
+
+                    <RadioButton
+                        android:id="@+id/AstraZeneca"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/purple_700"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="AstraZeneca" />
+
+                    <RadioButton
+                        android:id="@+id/JJ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/purple_700"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="J&amp;J" />
+                </RadioGroup>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/nadpisockovania"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/montserrat_medium"
-                android:text="RT-PCR test"
-                android:buttonTint="@color/purple_700"/>
-
-
-        </RadioGroup>
-
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:fontFamily="@font/montserrat_medium"
-        android:gravity="center"
-        android:text="Dátum vykonania testu :"
-        android:textColor="#000000" />
-
-    <CalendarView
-        android:id="@+id/calendar"
-        android:layout_width="match_parent"
-        android:layout_height="301dp"
-        android:theme="@style/montserrat_text" />
-
+                android:gravity="center"
+                android:text="Dátum očkovania"
+                android:textColor="#000000"
+                android:visibility="invisible"
+                tools:ignore="HardcodedText" />
+            <CalendarView
+                android:id="@+id/datumockovania"
+                android:layout_width="match_parent"
+                android:layout_height="301dp"
+                android:visibility="invisible"
+                android:theme="@style/montserrat_text" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

@@ -6,12 +6,14 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CalendarView;
+import android.widget.CompoundButton;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -22,7 +24,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Map;
+import java.util.Set;
+
 import sk.upjs.ics.android.koncovyprojekt2.provider.NoteContentProvider;
 import sk.upjs.ics.android.koncovyprojekt2.provider.Provider;
 
@@ -38,6 +45,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public static SharedPreferences settings;
     public static String meno;
     public static String priezvisko;
+    public static boolean isPrvadavka;
+    public static String datumPrvadavka;
+    public static boolean isDruhadavka;
+    public static String datumDruhadavka;
+    public static String firma;
+    public static ArrayList<String> testy;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +60,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         settings = getSharedPreferences("DATA", Context.MODE_PRIVATE);
         meno = settings.getString("MENO", "");
         priezvisko = settings.getString("PRIEZVISKO","");
+        isPrvadavka = settings.getBoolean("ISPRVADAVKA", false);
+        datumPrvadavka = settings.getString("DATUMPRVADAVKA", "");
+        isDruhadavka = settings.getBoolean("ISDRUHADAVKA", false);
+        datumDruhadavka = settings.getString("DATUMDRUHADAVKA", "");
+        firma = settings.getString("FIRMA", "");
+        testy = (ArrayList<String>) settings.getStringSet("TESTY", null);
         setContentView(R.layout.activity_main);
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
@@ -145,58 +166,84 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void createNewTest() {
-        LayoutInflater inflanter = this.getLayoutInflater();
-        View allertDialogView = inflanter.inflate(R.layout.dialog, null);
         AlertDialog.Builder builder= new AlertDialog.Builder(this,R.style.DialogTheme);
-
-        builder.setTitle("Pridaj nový test");
-        //builder.setSpan(AlignmentSpan.Standard(Layout.Alignment.ALIGN_CENTER), 0, title.length, 0);
+        builder.setTitle("Pridaj svoje informácie");
         final View customLayout = getLayoutInflater().inflate(R.layout.dialog, null);
         builder.setView(customLayout);
         builder.create();
-        final RadioGroup tests = customLayout.findViewById(R.id.tests);
-        final RadioGroup days  = customLayout.findViewById(R.id.days);
-        final CalendarView calendar= customLayout.findViewById(R.id.calendar);
-        final Calendar cal = Calendar.getInstance();
-        final String[] Date = new String[3];
+        final RadioGroup typTestu  = customLayout.findViewById(R.id.typTestu);
+        final RadioGroup pozitnegat  = customLayout.findViewById(R.id.pozitnegat);
+        typTestu.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                pozitnegat.setVisibility(View.VISIBLE);
+            }
+        });
 
-        Date[0]= String.valueOf(cal.get(Calendar.DAY_OF_MONTH));
-        Date[1]= String.valueOf(cal.get(Calendar.MONTH)+1);
-        Date[2]= String.valueOf(cal.get(Calendar.YEAR));
-        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-
+        final RadioButton first_dose = customLayout.findViewById(R.id.first_dose);
+        final RadioButton second_dose = customLayout.findViewById(R.id.second_dose);
+        final RadioGroup firmy = customLayout.findViewById(R.id.firmy);
+        final TextView nadpisockovania = customLayout.findViewById(R.id.nadpisockovania);
+        final CalendarView datumockovania = customLayout.findViewById(R.id.datumockovania);
+        final Calendar cal1 = Calendar.getInstance();
+        final String[] Date1 = new String[3];
+        Date1[0]= String.valueOf(cal1.get(Calendar.DAY_OF_MONTH));
+        Date1[1]= String.valueOf(cal1.get(Calendar.MONTH)+1);
+        Date1[2]= String.valueOf(cal1.get(Calendar.YEAR));
+        datumockovania.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
-                Date[0] = String.valueOf(dayOfMonth);
-                Date[1] = String.valueOf(month+1);
-                Date[2] = String.valueOf(year);
+                Date1[0] = String.valueOf(dayOfMonth);
+                Date1[1] = String.valueOf(month+1);
+                Date1[2] = String.valueOf(year);
+            }
+        });
+        first_dose.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    firmy.setVisibility(View.VISIBLE);
+                    nadpisockovania.setVisibility(View.VISIBLE);
+                    datumockovania.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        second_dose.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    firmy.setVisibility(View.GONE);
+                    nadpisockovania.setVisibility(View.VISIBLE);
+                    datumockovania.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        final CalendarView datumvykonaniatestu= customLayout.findViewById(R.id.datumvykonanietestu);
+        final Calendar cal2 = Calendar.getInstance();
+        final String[] Date2 = new String[3];
+        Date2[0]= String.valueOf(cal2.get(Calendar.DAY_OF_MONTH));
+        Date2[1]= String.valueOf(cal2.get(Calendar.MONTH)+1);
+        Date2[2]= String.valueOf(cal2.get(Calendar.YEAR));
+        datumvykonaniatestu.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+                Date2[0] = String.valueOf(dayOfMonth);
+                Date2[1] = String.valueOf(month+1);
+                Date2[2] = String.valueOf(year);
             }
         });
 
         builder.setPositiveButton("ULOŽ", (dialog, which) -> {
-                String typ;
-                String dlzka;
-                String datum;
-                int radioID=days.getCheckedRadioButtonId();
-                switch (radioID){
-                    case R.id.day7:  dlzka="7";  break;
-                    case R.id.day14: dlzka="14"; break;
-                    case R.id.day21: dlzka="21"; break;
-                    default:dlzka="7";
-                }
-                radioID=tests.getCheckedRadioButtonId();
-                switch (radioID){
-                    case R.id.Anti_test: typ="antigen"; break;
-                    case R.id.PCR_test: typ="PCR"; break;
-                    default:typ="antigen";
-                }
-                datum= Date[0]+" "+Date[1]+" "+Date[2];
 
-                insertIntoContentProvider(typ,dlzka, datum);
+
+
+
 
         });
-                builder.setNegativeButton("Zrušiť", DISMISS_ACTION);
-                builder.show();
+        builder.setNegativeButton("Zrušiť", DISMISS_ACTION);
+        builder.show();
     }
 
     private void insertIntoContentProvider(String typ, String dlzka, String datum) {
