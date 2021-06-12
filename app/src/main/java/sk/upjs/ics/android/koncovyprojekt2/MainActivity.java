@@ -27,6 +27,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -50,9 +51,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public static boolean isDruhadavka;
     public static String datumDruhadavka;
     public static String firma;
-    public static ArrayList<String> testy;
-
-
+    public static Set<String> testy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         isDruhadavka = settings.getBoolean("ISDRUHADAVKA", false);
         datumDruhadavka = settings.getString("DATUMDRUHADAVKA", "");
         firma = settings.getString("FIRMA", "");
-        testy = (ArrayList<String>) settings.getStringSet("TESTY", null);
+        testy = settings.getStringSet("TESTY", new HashSet<String>());
         setContentView(R.layout.activity_main);
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
@@ -88,6 +87,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         SharedPreferences.Editor editor = settings.edit();
         editor.putString("MENO", meno);
         editor.putString("PRIEZVISKO", priezvisko);
+        editor.putBoolean("ISPRVADAVKA", isPrvadavka);
+        editor.putString("DATUMPRVADAVKA", datumPrvadavka);
+        editor.putBoolean("ISDRUHADAVKA", isDruhadavka);
+        editor.putString("DATUMDRUHADAVKA", datumDruhadavka);
+        editor.putString("FIRMA", firma);
+        editor.putStringSet("TESTY", testy);
         editor.apply();
     }
 
@@ -172,25 +177,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         builder.setView(customLayout);
         builder.create();
         final RadioGroup typTestu  = customLayout.findViewById(R.id.typTestu);
+        final RadioButton anti_test = customLayout.findViewById(R.id.Anti_test);
+        final RadioButton PCR_test = customLayout.findViewById(R.id.PCR_test);
         final RadioGroup pozitnegat  = customLayout.findViewById(R.id.pozitnegat);
+        final RadioButton negativita = customLayout.findViewById(R.id.negativita);
+        final RadioButton pozitivita = customLayout.findViewById(R.id.pozitivita);
         typTestu.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 pozitnegat.setVisibility(View.VISIBLE);
             }
         });
-
-        final RadioButton first_dose = customLayout.findViewById(R.id.first_dose);
-        final RadioButton second_dose = customLayout.findViewById(R.id.second_dose);
-        final RadioGroup firmy = customLayout.findViewById(R.id.firmy);
-        final TextView nadpisockovania = customLayout.findViewById(R.id.nadpisockovania);
-        final CalendarView datumockovania = customLayout.findViewById(R.id.datumockovania);
+        final CalendarView datumvykonaniatestu= customLayout.findViewById(R.id.datumvykonanietestu);
         final Calendar cal1 = Calendar.getInstance();
         final String[] Date1 = new String[3];
         Date1[0]= String.valueOf(cal1.get(Calendar.DAY_OF_MONTH));
         Date1[1]= String.valueOf(cal1.get(Calendar.MONTH)+1);
         Date1[2]= String.valueOf(cal1.get(Calendar.YEAR));
-        datumockovania.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+        datumvykonaniatestu.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
                 Date1[0] = String.valueOf(dayOfMonth);
@@ -198,12 +202,47 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Date1[2] = String.valueOf(year);
             }
         });
+
+        final TextView nadpisockovania = customLayout.findViewById(R.id.nadpisockovania);
+        final RadioButton first_dose = customLayout.findViewById(R.id.first_dose);
+        final RadioButton second_dose = customLayout.findViewById(R.id.second_dose);
+        final RadioGroup firmy = customLayout.findViewById(R.id.firmy);
+        final TextView nadpisdatumockovania = customLayout.findViewById(R.id.nadpisdatumockovania);
+        final CalendarView datumockovania = customLayout.findViewById(R.id.datumockovania);
+        final Calendar cal2 = Calendar.getInstance();
+        final String[] Date2 = new String[3];
+        Date2[0]= String.valueOf(cal2.get(Calendar.DAY_OF_MONTH));
+        Date2[1]= String.valueOf(cal2.get(Calendar.MONTH)+1);
+        Date2[2]= String.valueOf(cal2.get(Calendar.YEAR));
+        datumockovania.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+                Date2[0] = String.valueOf(dayOfMonth);
+                Date2[1] = String.valueOf(month+1);
+                Date2[2] = String.valueOf(year);
+            }
+        });
+        if (!isPrvadavka){
+            second_dose.setClickable(false);
+        }
+        if (isPrvadavka){
+            first_dose.setClickable(false);
+        }
+        if (isPrvadavka && isDruhadavka){
+            nadpisockovania.setVisibility(View.GONE);
+            first_dose.setVisibility(View.GONE);
+            second_dose.setVisibility(View.GONE);
+            datumockovania.setVisibility(View.GONE);
+
+        }
+        nadpisdatumockovania.setVisibility(View.GONE);
+        datumockovania.setVisibility(View.GONE);
         first_dose.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     firmy.setVisibility(View.VISIBLE);
-                    nadpisockovania.setVisibility(View.VISIBLE);
+                    nadpisdatumockovania.setVisibility(View.VISIBLE);
                     datumockovania.setVisibility(View.VISIBLE);
                 }
             }
@@ -214,32 +253,59 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     firmy.setVisibility(View.GONE);
-                    nadpisockovania.setVisibility(View.VISIBLE);
+                    nadpisdatumockovania.setVisibility(View.VISIBLE);
                     datumockovania.setVisibility(View.VISIBLE);
                 }
             }
         });
 
-        final CalendarView datumvykonaniatestu= customLayout.findViewById(R.id.datumvykonanietestu);
-        final Calendar cal2 = Calendar.getInstance();
-        final String[] Date2 = new String[3];
-        Date2[0]= String.valueOf(cal2.get(Calendar.DAY_OF_MONTH));
-        Date2[1]= String.valueOf(cal2.get(Calendar.MONTH)+1);
-        Date2[2]= String.valueOf(cal2.get(Calendar.YEAR));
-        datumvykonaniatestu.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
-                Date2[0] = String.valueOf(dayOfMonth);
-                Date2[1] = String.valueOf(month+1);
-                Date2[2] = String.valueOf(year);
-            }
-        });
-
         builder.setPositiveButton("ULOŽ", (dialog, which) -> {
+            if (anti_test.isChecked()){
+                if (pozitivita.isChecked()){
+                    testy.add("Antigénový test,pozitívny," + Date1[0] + " " + Date1[1] + " " + Date1[2]);
+                }
+                if (negativita.isChecked()) {
+                    testy.add("Antigénový test,pozitívny," + Date1[0] + " " + Date1[1] + " " + Date1[2]);
+                }
+            }
+            if (PCR_test.isChecked()){
+                if (pozitivita.isChecked()){
+                    testy.add("PCR test,pozitívny," + Date1[0] + " " + Date1[1] + " " + Date1[2]);
+                }
+                if (negativita.isChecked()) {
+                    testy.add("PCR test,pozitívny," + Date1[0] + " " + Date1[1] + " " + Date1[2]);
+                }
+            }
 
-
-
-
+            if (first_dose.isChecked()){
+                switch (firmy.getCheckedRadioButtonId()){
+                    case R.id.pfizer: {
+                        isPrvadavka = true;
+                        firma = "Pzifer/BioNTech";
+                    }
+                    case R.id.moderna: {
+                        isPrvadavka = true;
+                        firma = "Moderna";
+                    }
+                    case R.id.SputnikV: {
+                        isPrvadavka = true;
+                        firma = "Sputnik V";
+                    }
+                    case R.id.AstraZeneca: {
+                        isPrvadavka = true;
+                        firma = "AstraZeneca";
+                    }
+                    case R.id.JJ: {
+                        isPrvadavka = true;
+                        firma = "J&J";
+                    }
+                }
+                datumPrvadavka = Date2[0] + ". " + Date2[1] + ". " + Date2[2];
+            }
+            if (second_dose.isChecked()){
+                isDruhadavka = true;
+                datumDruhadavka = Date2[0] + " " + Date2[1] + " " + Date2[2];
+            }
 
         });
         builder.setNegativeButton("Zrušiť", DISMISS_ACTION);

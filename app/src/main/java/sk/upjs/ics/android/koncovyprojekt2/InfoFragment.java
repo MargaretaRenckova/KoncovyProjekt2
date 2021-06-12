@@ -23,7 +23,6 @@ public class InfoFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     private String mParam1;
     private String mParam2;
-    private ListView notesGridView;
     private TextView menoTextView;
     private TextView priezviskoTextView;
     private TextView ockovanie1;
@@ -63,6 +62,15 @@ public class InfoFragment extends Fragment {
         priezviskoTextView.setText(MainActivity.priezvisko);
         ockovanie1 = frameLayout.findViewById(R.id.ockovanie1);
         ockovanie2 = frameLayout.findViewById(R.id.ockovanie2);
+        if (MainActivity.isPrvadavka) {
+            ockovanie1.setText("- Dátum 1. dávky: " + MainActivity.datumPrvadavka);
+            ockovanie2.setText("  Vakcína: " + MainActivity.firma);
+            ockovanie1.setVisibility(View.VISIBLE);
+            ockovanie2.setVisibility(View.VISIBLE);
+            if (MainActivity.isDruhadavka) {
+                ockovanie2.setText("- Dátum 2. dávky: " + MainActivity.datumPrvadavka + "\n  Vakcína: " + MainActivity.firma);
+            }
+        }
         menoapriezvisko = frameLayout.findViewById(R.id.menoapriezvisko);
         menoapriezvisko.setOnClickListener(new View.OnClickListener() {
             @Override

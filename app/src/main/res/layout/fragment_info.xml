@@ -84,17 +84,17 @@
                 android:id="@+id/ockovanie1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Prvá dávka..."
                 android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/ockovanie2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Druhá dávka..."
                 android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:visibility="gone" />
 
             <TextView
                 android:layout_width="match_parent"

@@ -116,6 +116,7 @@
                 android:theme="@style/montserrat_text" />
 
             <TextView
+                android:id="@+id/nadpisockovania"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -217,7 +218,7 @@
                 </RadioGroup>
             </LinearLayout>
             <TextView
-                android:id="@+id/nadpisockovania"
+                android:id="@+id/nadpisdatumockovania"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -225,13 +226,11 @@
                 android:gravity="center"
                 android:text="Dátum očkovania"
                 android:textColor="#000000"
-                android:visibility="invisible"
                 tools:ignore="HardcodedText" />
             <CalendarView
                 android:id="@+id/datumockovania"
                 android:layout_width="match_parent"
                 android:layout_height="301dp"
-                android:visibility="invisible"
                 android:theme="@style/montserrat_text" />
         </LinearLayout>
     </ScrollView>
