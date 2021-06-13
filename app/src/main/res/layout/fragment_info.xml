@@ -5,17 +5,14 @@
     android:layout_height="match_parent"
     tools:context=".InfoFragment">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="16dp"
-        android:paddingTop="16dp"
-        android:paddingRight="16dp"
-        android:paddingBottom="16dp">
         <LinearLayout
             android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -105,9 +102,9 @@
                 android:textSize="25dp" />
 
             <ListView
-                android:id="@+id/notesGridView"
+                android:id="@+id/testyGridView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent" />
+
         </LinearLayout>
-    </ScrollView>
 </FrameLayout>

@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.ArraySet;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,6 +29,7 @@ import com.google.android.material.navigation.NavigationView;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -51,7 +53,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public static boolean isDruhadavka;
     public static String datumDruhadavka;
     public static String firma;
-    public static Set<String> testy;
+    public static ArrayList<String> testy;
+    public static ArrayList<String> testyDetail;
+    Set<String> testySet;
+    Set<String> testyDetailSet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +69,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         isDruhadavka = settings.getBoolean("ISDRUHADAVKA", false);
         datumDruhadavka = settings.getString("DATUMDRUHADAVKA", "");
         firma = settings.getString("FIRMA", "");
-        testy = settings.getStringSet("TESTY", new HashSet<String>());
+        testySet = settings.getStringSet("TESTY",  new HashSet<>());
+        testyDetailSet = settings.getStringSet("TESTYDETAIL", new HashSet<>());
+        testy = new ArrayList<>(testySet);
+        testyDetail = new ArrayList<>(testyDetailSet);
         setContentView(R.layout.activity_main);
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
@@ -92,7 +100,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         editor.putBoolean("ISDRUHADAVKA", isDruhadavka);
         editor.putString("DATUMDRUHADAVKA", datumDruhadavka);
         editor.putString("FIRMA", firma);
-        editor.putStringSet("TESTY", testy);
+        testySet = new HashSet<>();
+        testySet.addAll(testy);
+        testyDetailSet = new HashSet<>();
+        testyDetailSet.addAll(testyDetail);
+        editor.putStringSet("TESTY", testySet );
+        editor.putStringSet("TESTYDETAIL", testyDetailSet);
+
         editor.apply();
     }
 
@@ -164,13 +178,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.item) {
-            createNewTest();
+            upravProfil();
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    private void createNewTest() {
+    private void upravProfil() {
         AlertDialog.Builder builder= new AlertDialog.Builder(this,R.style.DialogTheme);
         builder.setTitle("Pridaj svoje informácie");
         final View customLayout = getLayoutInflater().inflate(R.layout.dialog, null);
@@ -262,18 +276,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         builder.setPositiveButton("ULOŽ", (dialog, which) -> {
             if (anti_test.isChecked()){
                 if (pozitivita.isChecked()){
-                    testy.add("Antigénový test,pozitívny," + Date1[0] + " " + Date1[1] + " " + Date1[2]);
+                    testy.add("Antigénový test");
+                    testyDetail.add("pozitívny," + Date1[0] + ". " + Date1[1] + ". " + Date1[2]);
                 }
                 if (negativita.isChecked()) {
-                    testy.add("Antigénový test,pozitívny," + Date1[0] + " " + Date1[1] + " " + Date1[2]);
+                    testy.add("Antigénový test");
+                    testyDetail.add("negatívny," + Date1[0] + ". " + Date1[1] + ". " + Date1[2]);
                 }
             }
             if (PCR_test.isChecked()){
                 if (pozitivita.isChecked()){
-                    testy.add("PCR test,pozitívny," + Date1[0] + " " + Date1[1] + " " + Date1[2]);
+                    testy.add("PCR test");
+                    testyDetail.add("pozitívny," + Date1[0] + ". " + Date1[1] + ". " + Date1[2]);
                 }
                 if (negativita.isChecked()) {
-                    testy.add("PCR test,pozitívny," + Date1[0] + " " + Date1[1] + " " + Date1[2]);
+                    testy.add("PCR test");
+                    testyDetail.add("negatívny," + Date1[0] + ". " + Date1[1] + ". " + Date1[2]);
                 }
             }
 
@@ -282,22 +300,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     case R.id.pfizer: {
                         isPrvadavka = true;
                         firma = "Pzifer/BioNTech";
+                        break;
                     }
                     case R.id.moderna: {
                         isPrvadavka = true;
                         firma = "Moderna";
+                        break;
                     }
                     case R.id.SputnikV: {
                         isPrvadavka = true;
                         firma = "Sputnik V";
+                        break;
                     }
                     case R.id.AstraZeneca: {
                         isPrvadavka = true;
                         firma = "AstraZeneca";
+                        break;
                     }
                     case R.id.JJ: {
                         isPrvadavka = true;
                         firma = "J&J";
+                        break;
                     }
                 }
                 datumPrvadavka = Date2[0] + ". " + Date2[1] + ". " + Date2[2];
@@ -306,7 +329,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 isDruhadavka = true;
                 datumDruhadavka = Date2[0] + " " + Date2[1] + " " + Date2[2];
             }
-
         });
         builder.setNegativeButton("Zrušiť", DISMISS_ACTION);
         builder.show();

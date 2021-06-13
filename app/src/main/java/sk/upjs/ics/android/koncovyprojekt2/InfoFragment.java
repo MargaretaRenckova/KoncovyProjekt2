@@ -10,12 +10,22 @@ import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import static sk.upjs.ics.android.koncovyprojekt2.Defaults.DISMISS_ACTION;
+import static sk.upjs.ics.android.koncovyprojekt2.MainActivity.*;
 
 
 public class InfoFragment extends Fragment {
@@ -28,7 +38,8 @@ public class InfoFragment extends Fragment {
     private TextView ockovanie1;
     private TextView ockovanie2;
     private LinearLayout menoapriezvisko;
-
+    private ListView testyGridView;
+    private SimpleCursorAdapter adapter;
 
 
     public InfoFragment() {
@@ -58,17 +69,17 @@ public class InfoFragment extends Fragment {
         View frameLayout = inflater.inflate(R.layout.fragment_info, container, false);
         menoTextView = frameLayout.findViewById(R.id.menoBuilder);
         priezviskoTextView = frameLayout.findViewById(R.id.priezviskoBuilder);
-        menoTextView.setText(MainActivity.meno);
-        priezviskoTextView.setText(MainActivity.priezvisko);
+        menoTextView.setText(meno);
+        priezviskoTextView.setText(priezvisko);
         ockovanie1 = frameLayout.findViewById(R.id.ockovanie1);
         ockovanie2 = frameLayout.findViewById(R.id.ockovanie2);
-        if (MainActivity.isPrvadavka) {
-            ockovanie1.setText("- Dátum 1. dávky: " + MainActivity.datumPrvadavka);
-            ockovanie2.setText("  Vakcína: " + MainActivity.firma);
+        if (isPrvadavka) {
+            ockovanie1.setText("- Dátum 1. dávky: " + datumPrvadavka);
+            ockovanie2.setText("  Vakcína: " + firma);
             ockovanie1.setVisibility(View.VISIBLE);
             ockovanie2.setVisibility(View.VISIBLE);
-            if (MainActivity.isDruhadavka) {
-                ockovanie2.setText("- Dátum 2. dávky: " + MainActivity.datumPrvadavka + "\n  Vakcína: " + MainActivity.firma);
+            if (isDruhadavka) {
+                ockovanie2.setText("- Dátum 2. dávky: " + datumPrvadavka + "\n  Vakcína: " + firma);
             }
         }
         menoapriezvisko = frameLayout.findViewById(R.id.menoapriezvisko);
@@ -82,18 +93,33 @@ public class InfoFragment extends Fragment {
                 builder.create();
                 final EditText menoBuilder = customLayout.findViewById(R.id.menoBuilder);
                 final EditText priezviskoBuilder = customLayout.findViewById(R.id.priezviskoBuilder);
-                menoBuilder.setText(MainActivity.meno);
-                priezviskoBuilder.setText(MainActivity.priezvisko);
+                menoBuilder.setText(meno);
+                priezviskoBuilder.setText(priezvisko);
                 builder.setPositiveButton("ULOŽ", (dialog, which) -> {
-                    MainActivity.meno = menoBuilder.getText().toString();
-                    MainActivity.priezvisko = priezviskoBuilder.getText().toString();
-                    menoTextView.setText(MainActivity.meno);
-                    priezviskoTextView.setText(MainActivity.priezvisko);
+                    meno = menoBuilder.getText().toString();
+                    priezvisko = priezviskoBuilder.getText().toString();
+                    menoTextView.setText(meno);
+                    priezviskoTextView.setText(priezvisko);
                 });
                 builder.setNegativeButton("Zrušiť", DISMISS_ACTION);
                 builder.show();
             }
         });
+        testyGridView = frameLayout.findViewById(R.id.testyGridView);
+        List<Map<String, String>> data = new ArrayList<Map<String, String>>();
+        for (int i = 0; i < testy.size(); i++) {
+            Map<String, String> datum = new HashMap<String, String>(3);
+            datum.put("FL", testy.get(i));
+            datum.put("SL", testyDetail.get(i).split(",")[0]);
+            datum.put("TL", testyDetail.get(i).split(",")[1]);
+            data.add(datum);
+        }
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), R.layout.test_layout, R.id.itemTypTestu, testy);
+        SimpleAdapter adapter = new SimpleAdapter(this.getActivity(), data,
+                R.layout.test_layout,
+                new String[] {"FL", "SL", "TL" },
+                new int[] {R.id.itemTypTestu, R.id.itemVysledokTestu, R.id.itemDatumTestu });
+        testyGridView.setAdapter(adapter);
         return frameLayout;
     }
 
