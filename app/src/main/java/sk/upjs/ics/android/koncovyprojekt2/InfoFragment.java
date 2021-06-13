@@ -1,22 +1,14 @@
 package sk.upjs.ics.android.koncovyprojekt2;
 import android.app.AlertDialog;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
-import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -39,7 +31,6 @@ public class InfoFragment extends Fragment {
     private TextView ockovanie2;
     private LinearLayout menoapriezvisko;
     private ListView testyGridView;
-    private SimpleCursorAdapter adapter;
 
 
     public InfoFragment() {
@@ -114,7 +105,6 @@ public class InfoFragment extends Fragment {
             datum.put("TL", testyDetail.get(i).split(",")[1]);
             data.add(datum);
         }
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), R.layout.test_layout, R.id.itemTypTestu, testy);
         SimpleAdapter adapter = new SimpleAdapter(this.getActivity(), data,
                 R.layout.test_layout,
                 new String[] {"FL", "SL", "TL" },

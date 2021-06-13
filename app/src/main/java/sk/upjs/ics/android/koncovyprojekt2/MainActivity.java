@@ -1,12 +1,8 @@
 package sk.upjs.ics.android.koncovyprojekt2;
 import android.app.AlertDialog;
-import android.content.AsyncQueryHandler;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.ArraySet;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,7 +11,6 @@ import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,21 +24,11 @@ import com.google.android.material.navigation.NavigationView;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
-import sk.upjs.ics.android.koncovyprojekt2.provider.NoteContentProvider;
-import sk.upjs.ics.android.koncovyprojekt2.provider.Provider;
-
 import static sk.upjs.ics.android.koncovyprojekt2.Defaults.DISMISS_ACTION;
-import static sk.upjs.ics.android.koncovyprojekt2.Defaults.NO_COOKIE;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
-    private static final int TEST_LOADER_ID = 0;
-    private static final int INSERT_TEST_TOKEN = 0;
-    private static final int DELETE_TEST_TOKEN = 0;
-    private static final int UPDATE_TEST_TOKEN = 0;
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
     public static SharedPreferences settings;
     public static String meno;
@@ -63,13 +48,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         settings = getSharedPreferences("DATA", Context.MODE_PRIVATE);
         meno = settings.getString("MENO", "");
-        priezvisko = settings.getString("PRIEZVISKO","");
+        priezvisko = settings.getString("PRIEZVISKO", "");
         isPrvadavka = settings.getBoolean("ISPRVADAVKA", false);
         datumPrvadavka = settings.getString("DATUMPRVADAVKA", "");
         isDruhadavka = settings.getBoolean("ISDRUHADAVKA", false);
         datumDruhadavka = settings.getString("DATUMDRUHADAVKA", "");
         firma = settings.getString("FIRMA", "");
-        testySet = settings.getStringSet("TESTY",  new HashSet<>());
+        testySet = settings.getStringSet("TESTY", new HashSet<>());
         testyDetailSet = settings.getStringSet("TESTYDETAIL", new HashSet<>());
         testy = new ArrayList<>(testySet);
         testyDetail = new ArrayList<>(testyDetailSet);
@@ -104,9 +89,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         testySet.addAll(testy);
         testyDetailSet = new HashSet<>();
         testyDetailSet.addAll(testyDetail);
-        editor.putStringSet("TESTY", testySet );
+        editor.putStringSet("TESTY", testySet);
         editor.putStringSet("TESTYDETAIL", testyDetailSet);
-
         editor.apply();
     }
 
@@ -132,26 +116,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        Fragment selectedFragment = null;
+        Fragment selectedFragment;
         switch (item.getItemId()) {
             case R.id.testy:
-                selectedFragment=new InfoFragment();
+                selectedFragment = new InfoFragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
                 break;
             case R.id.karantena:
-                selectedFragment=new Karantena();
+                selectedFragment = new Karantena();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
                 break;
             case R.id.telefon:
-                selectedFragment=new Kontakty();
+                selectedFragment = new Kontakty();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
                 break;
             case R.id.qaa:
-                selectedFragment=new Otazky();
+                selectedFragment = new Otazky();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
                 break;
             case R.id.info:
-                selectedFragment=new InfoONas();
+                selectedFragment = new InfoONas();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
                 break;
 
@@ -159,6 +143,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
     @Override
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -185,15 +170,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void upravProfil() {
-        AlertDialog.Builder builder= new AlertDialog.Builder(this,R.style.DialogTheme);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.DialogTheme);
         builder.setTitle("Pridaj svoje informácie");
         final View customLayout = getLayoutInflater().inflate(R.layout.dialog, null);
         builder.setView(customLayout);
         builder.create();
-        final RadioGroup typTestu  = customLayout.findViewById(R.id.typTestu);
+        final RadioGroup typTestu = customLayout.findViewById(R.id.typTestu);
         final RadioButton anti_test = customLayout.findViewById(R.id.Anti_test);
         final RadioButton PCR_test = customLayout.findViewById(R.id.PCR_test);
-        final RadioGroup pozitnegat  = customLayout.findViewById(R.id.pozitnegat);
+        final RadioGroup pozitnegat = customLayout.findViewById(R.id.pozitnegat);
         final RadioButton negativita = customLayout.findViewById(R.id.negativita);
         final RadioButton pozitivita = customLayout.findViewById(R.id.pozitivita);
         typTestu.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -202,17 +187,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 pozitnegat.setVisibility(View.VISIBLE);
             }
         });
-        final CalendarView datumvykonaniatestu= customLayout.findViewById(R.id.datumvykonanietestu);
+        final CalendarView datumvykonaniatestu = customLayout.findViewById(R.id.datumvykonanietestu);
         final Calendar cal1 = Calendar.getInstance();
         final String[] Date1 = new String[3];
-        Date1[0]= String.valueOf(cal1.get(Calendar.DAY_OF_MONTH));
-        Date1[1]= String.valueOf(cal1.get(Calendar.MONTH)+1);
-        Date1[2]= String.valueOf(cal1.get(Calendar.YEAR));
+        Date1[0] = String.valueOf(cal1.get(Calendar.DAY_OF_MONTH));
+        Date1[1] = String.valueOf(cal1.get(Calendar.MONTH) + 1);
+        Date1[2] = String.valueOf(cal1.get(Calendar.YEAR));
         datumvykonaniatestu.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
                 Date1[0] = String.valueOf(dayOfMonth);
-                Date1[1] = String.valueOf(month+1);
+                Date1[1] = String.valueOf(month + 1);
                 Date1[2] = String.valueOf(year);
             }
         });
@@ -225,24 +210,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         final CalendarView datumockovania = customLayout.findViewById(R.id.datumockovania);
         final Calendar cal2 = Calendar.getInstance();
         final String[] Date2 = new String[3];
-        Date2[0]= String.valueOf(cal2.get(Calendar.DAY_OF_MONTH));
-        Date2[1]= String.valueOf(cal2.get(Calendar.MONTH)+1);
-        Date2[2]= String.valueOf(cal2.get(Calendar.YEAR));
+        Date2[0] = String.valueOf(cal2.get(Calendar.DAY_OF_MONTH));
+        Date2[1] = String.valueOf(cal2.get(Calendar.MONTH) + 1);
+        Date2[2] = String.valueOf(cal2.get(Calendar.YEAR));
         datumockovania.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
                 Date2[0] = String.valueOf(dayOfMonth);
-                Date2[1] = String.valueOf(month+1);
+                Date2[1] = String.valueOf(month + 1);
                 Date2[2] = String.valueOf(year);
             }
         });
-        if (!isPrvadavka){
+        if (!isPrvadavka) {
             second_dose.setClickable(false);
         }
-        if (isPrvadavka){
+        if (isPrvadavka) {
             first_dose.setClickable(false);
         }
-        if (isPrvadavka && isDruhadavka){
+        if (isPrvadavka && isDruhadavka) {
             nadpisockovania.setVisibility(View.GONE);
             first_dose.setVisibility(View.GONE);
             second_dose.setVisibility(View.GONE);
@@ -274,8 +259,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
 
         builder.setPositiveButton("ULOŽ", (dialog, which) -> {
-            if (anti_test.isChecked()){
-                if (pozitivita.isChecked()){
+            if (anti_test.isChecked()) {
+                if (pozitivita.isChecked()) {
                     testy.add("Antigénový test");
                     testyDetail.add("pozitívny," + Date1[0] + ". " + Date1[1] + ". " + Date1[2]);
                 }
@@ -284,8 +269,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     testyDetail.add("negatívny," + Date1[0] + ". " + Date1[1] + ". " + Date1[2]);
                 }
             }
-            if (PCR_test.isChecked()){
-                if (pozitivita.isChecked()){
+            if (PCR_test.isChecked()) {
+                if (pozitivita.isChecked()) {
                     testy.add("PCR test");
                     testyDetail.add("pozitívny," + Date1[0] + ". " + Date1[1] + ". " + Date1[2]);
                 }
@@ -295,8 +280,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             }
 
-            if (first_dose.isChecked()){
-                switch (firmy.getCheckedRadioButtonId()){
+            if (first_dose.isChecked()) {
+                switch (firmy.getCheckedRadioButtonId()) {
                     case R.id.pfizer: {
                         isPrvadavka = true;
                         firma = "Pzifer/BioNTech";
@@ -325,27 +310,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
                 datumPrvadavka = Date2[0] + ". " + Date2[1] + ". " + Date2[2];
             }
-            if (second_dose.isChecked()){
+            if (second_dose.isChecked()) {
                 isDruhadavka = true;
                 datumDruhadavka = Date2[0] + " " + Date2[1] + " " + Date2[2];
             }
         });
         builder.setNegativeButton("Zrušiť", DISMISS_ACTION);
         builder.show();
-    }
-
-    private void insertIntoContentProvider(String typ, String dlzka, String datum) {
-        Uri uri = NoteContentProvider.CONTENT_URI;
-        ContentValues values = new ContentValues();
-        values.put(Provider.Test.TEST_LENGTH, dlzka);
-        values.put(Provider.Test.TEST_TYPE, typ);
-        values.put(Provider.Test.TEST_DATE, datum);
-        AsyncQueryHandler insertHandler = new AsyncQueryHandler(getContentResolver()) {
-            @Override
-            protected void onInsertComplete(int token, Object cookie, Uri uri) {
-                Toast.makeText(MainActivity.this, "Test bol uložený", Toast.LENGTH_SHORT).show();
-            }
-        };
-        insertHandler.startInsert(INSERT_TEST_TOKEN, NO_COOKIE, uri, values);
     }
 }

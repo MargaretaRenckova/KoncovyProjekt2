@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,20 +19,17 @@
                 android:gravity="center"
                 android:text="Test : "
                 android:textColor="#000000" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:orientation="horizontal">
-
                 <RadioGroup
                     android:id="@+id/typTestu"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
-
                     <RadioButton
                         android:id="@+id/Anti_test"
                         android:layout_width="match_parent"
@@ -44,7 +40,6 @@
                         android:fontFamily="@font/montserrat_medium"
                         android:text="Antigénový"
                         android:textColor="#000000" />
-
                     <RadioButton
                         android:id="@+id/PCR_test"
                         android:layout_width="match_parent"
@@ -53,10 +48,7 @@
                         android:buttonTint="@color/purple_700"
                         android:fontFamily="@font/montserrat_medium"
                         android:text="RT-PCR Test" />
-
                 </RadioGroup>
-
-
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -66,14 +58,12 @@
                 android:layout_marginEnd="50dp"
                 android:layout_marginRight="30dp"
                 android:orientation="horizontal">
-
                 <RadioGroup
                     android:id="@+id/pozitnegat"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
                     android:visibility="gone">
-
                     <RadioButton
                         android:id="@+id/negativita"
                         android:layout_width="match_parent"
@@ -84,7 +74,6 @@
                         android:fontFamily="@font/montserrat_medium"
                         android:linksClickable="true"
                         android:text="Negatívny" />
-
                     <RadioButton
                         android:id="@+id/pozitivita"
                         android:layout_width="match_parent"
@@ -94,12 +83,9 @@
                         android:fontFamily="@font/montserrat_medium"
                         android:text="Pozitívny"
                         android:textColor="#000000" />
-
-
                 </RadioGroup>
-
-
             </LinearLayout>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -108,7 +94,6 @@
                 android:gravity="center"
                 android:text="Dátum vykonania testu :"
                 android:textColor="#000000" />
-
             <CalendarView
                 android:id="@+id/datumvykonanietestu"
                 android:layout_width="match_parent"
@@ -125,20 +110,17 @@
                 android:text="Očkovanie"
                 android:textColor="#000000"
                 tools:ignore="HardcodedText" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:orientation="vertical">
-
                 <RadioGroup
                     android:id="@+id/doses"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
-
                     <RadioButton
                         android:id="@+id/first_dose"
                         android:layout_width="match_parent"
@@ -147,7 +129,6 @@
                         android:buttonTint="@color/purple_700"
                         android:fontFamily="@font/montserrat_medium"
                         android:text="Prvá dávka" />
-
                     <RadioButton
                         android:id="@+id/second_dose"
                         android:layout_width="match_parent"
@@ -156,16 +137,12 @@
                         android:buttonTint="@color/purple_700"
                         android:fontFamily="@font/montserrat_medium"
                         android:text="Druhá dávka" />
-
-
                 </RadioGroup>
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
                 <RadioGroup
                     android:id="@+id/firmy"
                     android:layout_width="match_parent"
@@ -173,7 +150,6 @@
                     android:orientation="vertical"
                     android:layout_marginLeft="80dp"
                     android:visibility="gone">
-
                     <RadioButton
                         android:id="@+id/pfizer"
                         android:layout_width="wrap_content"
@@ -182,7 +158,6 @@
                         android:buttonTint="@color/purple_700"
                         android:fontFamily="@font/montserrat_medium"
                         android:text="Pfizer/BioNTech" />
-
                     <RadioButton
                         android:id="@+id/moderna"
                         android:layout_width="wrap_content"
@@ -190,8 +165,6 @@
                         android:buttonTint="@color/purple_700"
                         android:fontFamily="@font/montserrat_medium"
                         android:text="Moderna" />
-
-
                     <RadioButton
                         android:id="@+id/SputnikV"
                         android:layout_width="wrap_content"
@@ -199,7 +172,6 @@
                         android:buttonTint="@color/purple_700"
                         android:fontFamily="@font/montserrat_medium"
                         android:text="Sputnik V" />
-
                     <RadioButton
                         android:id="@+id/AstraZeneca"
                         android:layout_width="wrap_content"
@@ -207,7 +179,6 @@
                         android:buttonTint="@color/purple_700"
                         android:fontFamily="@font/montserrat_medium"
                         android:text="AstraZeneca" />
-
                     <RadioButton
                         android:id="@+id/JJ"
                         android:layout_width="wrap_content"

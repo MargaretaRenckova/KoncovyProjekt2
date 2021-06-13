@@ -29,8 +29,6 @@ public class Otazky extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View frameLayout = inflater.inflate(R.layout.fragment_otazky, container, false);
-       // ImageView obrazok=(ImageView) frameLayout.findViewById(R.id.skuska);
-
         ExpandableTextView textView = (ExpandableTextView) frameLayout.findViewById(R.id.expand_tex_view);
         textView.setText(getString(R.string.IzolaciaTrva));
 
@@ -54,7 +52,6 @@ public class Otazky extends Fragment {
 
         ExpandableTextView textView8 = (ExpandableTextView) frameLayout.findViewById(R.id.expand_tex_view8);
         textView8.setText(getString(R.string.covidautomat));
-
 
         return frameLayout;
     }

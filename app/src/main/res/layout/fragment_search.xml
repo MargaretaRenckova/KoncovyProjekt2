@@ -10,12 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FFFFFF">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -30,15 +28,13 @@
                 android:textColorLink="#532B2B"
                 android:textSize="22sp" />
 
-            <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@color/white"
                 android:orientation="vertical"
-                android:padding="10dp"
-                app:corner_radius="10dp">
-
+                android:padding="10dp">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -48,7 +44,6 @@
                     android:text="MENO"
                     android:textColor="@color/purple_700"
                     android:textSize="14sp" />
-
                 <EditText
                     android:id="@+id/name"
                     android:layout_width="match_parent"
@@ -58,26 +53,21 @@
                     android:inputType="textPersonName"
                     android:textColor="#000000"
                     android:textColorHint="#AFAFAF" />
+            </LinearLayout>
 
-            </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
-
-            <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@color/white"
                 android:orientation="vertical"
-                android:padding="10dp"
-                app:corner_radius="10dp">
-
+                android:padding="10dp">
                 <TextView
-                    android:id="@+id/textView13"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_medium"
                     android:text="TELEFÓNNE ČÍSLO"
                     android:textColor="@color/purple_700" />
-
                 <EditText
                     android:id="@+id/phone"
                     android:layout_width="match_parent"
@@ -88,25 +78,21 @@
                     android:maxLength="15"
                     android:textColor="#000000"
                     android:textColorHint="#AFAFAF" />
-            </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+            </LinearLayout>
 
-            <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@color/white"
                 android:orientation="vertical"
-                android:padding="10dp"
-                app:corner_radius="10dp">
-
+                android:padding="10dp">
                 <TextView
-                    android:id="@+id/textView16"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_medium"
                     android:text="DÁTUM NARODENIA"
                     android:textColor="@color/purple_700" />
-
                 <EditText
                     android:id="@+id/dateOfBirth"
                     android:layout_width="match_parent"
@@ -115,26 +101,21 @@
                     android:hint="dd.mm.rrrr"
                     android:inputType="textPersonName"
                     android:textColorHint="#AFAFAF" />
+            </LinearLayout>
 
-            </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
-
-            <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@color/white"
                 android:orientation="vertical"
-                android:padding="10dp"
-                app:corner_radius="10dp">
-
+                android:padding="10dp">
                 <TextView
-                    android:id="@+id/textView15"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_medium"
                     android:text="RODNÉ ČÍSLO"
                     android:textColor="@color/purple_700" />
-
                 <EditText
                     android:id="@+id/birthNumber"
                     android:layout_width="match_parent"
@@ -144,26 +125,21 @@
                     android:inputType="number"
                     android:maxLength="11"
                     android:textColorHint="#AFAFAF" />
+            </LinearLayout>
 
-            </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
-
-            <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@color/white"
                 android:orientation="vertical"
-                android:padding="10dp"
-                app:corner_radius="10dp">
-
+                android:padding="10dp">
                 <TextView
-                    android:id="@+id/textView14"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_medium"
                     android:text="COVID-19 PASS"
                     android:textColor="@color/purple_700" />
-
                 <EditText
                     android:id="@+id/covidPass"
                     android:layout_width="match_parent"
@@ -173,8 +149,7 @@
                     android:inputType="number"
                     android:maxLength="8"
                     android:textColorHint="#AFAFAF" />
-
-            </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+            </LinearLayout>
 
             <Button
                 android:id="@+id/odoslatButton"
@@ -190,7 +165,4 @@
                 app:backgroundTint="@color/purple_700" />
         </LinearLayout>
     </ScrollView>
-
-
-
 </LinearLayout>

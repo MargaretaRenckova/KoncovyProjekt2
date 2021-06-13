@@ -47,13 +47,13 @@ public class SearchFragment extends Fragment {
 
                 final TextView txtname = customLayout.findViewById(R.id.menoBuilder);
                 txtname.setText(menoString);
-                final TextView txtphone=customLayout.findViewById(R.id.cislo);
+                final TextView txtphone=customLayout.findViewById(R.id.cisloBuilder);
                 txtphone.setText(cisloString);
-                final TextView txtDateOfBirth=customLayout.findViewById(R.id.datumnarodenia);
+                final TextView txtDateOfBirth=customLayout.findViewById(R.id.datumnarodeniaBuilder);
                 txtDateOfBirth.setText(datumnarString);
-                final TextView txtbirthNumber=customLayout.findViewById(R.id.rodnecislo);
+                final TextView txtbirthNumber=customLayout.findViewById(R.id.rodnecisloBuilder);
                 txtbirthNumber.setText(rodcisloString);
-                final TextView txtcovidPass=customLayout.findViewById(R.id.pass);
+                final TextView txtcovidPass=customLayout.findViewById(R.id.passBuilder);
                 txtcovidPass.setText(covidPassString);
 
 
