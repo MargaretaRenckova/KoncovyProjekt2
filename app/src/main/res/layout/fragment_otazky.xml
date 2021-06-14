@@ -12,11 +12,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginRight="5dp"
             android:orientation="vertical">
 
             <com.ms.square.android.expandabletextview.ExpandableTextView
@@ -53,9 +48,9 @@
                 <ImageButton
                     android:id="@id/expand_collapse"
                     android:layout_width="match_parent"
-                    android:layout_height="30dip"
+                    android:layout_height="35dip"
                     android:layout_gravity="center"
-                    android:background="@color/siva2"
+                    android:background="@drawable/gradient"
                     android:minWidth="30dip"
                     android:minHeight="30dip"
                     android:padding="16dp"
@@ -97,9 +92,9 @@
                 <ImageButton
                     android:id="@id/expand_collapse"
                     android:layout_width="match_parent"
-                    android:layout_height="30dip"
+                    android:layout_height="35dip"
                     android:layout_gravity="center"
-                    android:background="@color/siva2"
+                    android:background="@drawable/gradient"
                     android:minWidth="30dip"
                     android:minHeight="30dip"
                     android:padding="16dp"
@@ -141,9 +136,9 @@
                 <ImageButton
                     android:id="@id/expand_collapse"
                     android:layout_width="match_parent"
-                    android:layout_height="30dip"
+                    android:layout_height="35dip"
                     android:layout_gravity="center"
-                    android:background="@color/siva2"
+                    android:background="@drawable/gradient"
                     android:minWidth="30dip"
                     android:minHeight="30dip"
                     android:padding="16dp"
@@ -185,9 +180,9 @@
                 <ImageButton
                     android:id="@id/expand_collapse"
                     android:layout_width="match_parent"
-                    android:layout_height="30dip"
+                    android:layout_height="35dip"
                     android:layout_gravity="center"
-                    android:background="@color/siva2"
+                    android:background="@drawable/gradient"
                     android:minWidth="30dip"
                     android:minHeight="30dip"
                     android:padding="16dp"
@@ -229,9 +224,9 @@
                 <ImageButton
                     android:id="@id/expand_collapse"
                     android:layout_width="match_parent"
-                    android:layout_height="30dip"
+                    android:layout_height="35dip"
                     android:layout_gravity="center"
-                    android:background="@color/siva2"
+                    android:background="@drawable/gradient"
                     android:minWidth="30dip"
                     android:minHeight="30dip"
                     android:padding="16dp"
@@ -273,9 +268,9 @@
                 <ImageButton
                     android:id="@id/expand_collapse"
                     android:layout_width="match_parent"
-                    android:layout_height="30dip"
+                    android:layout_height="35dip"
                     android:layout_gravity="center"
-                    android:background="@color/siva2"
+                    android:background="@drawable/gradient"
                     android:minWidth="30dip"
                     android:minHeight="30dip"
                     android:padding="16dp"
@@ -317,9 +312,9 @@
                 <ImageButton
                     android:id="@id/expand_collapse"
                     android:layout_width="match_parent"
-                    android:layout_height="30dip"
+                    android:layout_height="35dip"
                     android:layout_gravity="center"
-                    android:background="@color/siva2"
+                    android:background="@drawable/gradient"
                     android:minWidth="30dip"
                     android:minHeight="30dip"
                     android:padding="16dp"
@@ -361,9 +356,9 @@
                 <ImageButton
                     android:id="@id/expand_collapse"
                     android:layout_width="match_parent"
-                    android:layout_height="30dip"
+                    android:layout_height="35dip"
                     android:layout_gravity="center"
-                    android:background="@color/siva2"
+                    android:background="@drawable/gradient"
                     android:minWidth="30dip"
                     android:minHeight="30dip"
                     android:padding="16dp"

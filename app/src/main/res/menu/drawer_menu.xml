@@ -27,11 +27,6 @@
             android:id="@+id/info"
             android:icon="@drawable/info"
             android:title="Informácie" />
-
-        <item
-            android:id="@+id/ine"
-            android:icon="@drawable/add"
-            android:title="dalsi fragment" />
     </group>
 
 </menu>

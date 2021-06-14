@@ -70,7 +70,7 @@ public class InfoFragment extends Fragment {
             ockovanie1.setVisibility(View.VISIBLE);
             ockovanie2.setVisibility(View.VISIBLE);
             if (isDruhadavka) {
-                ockovanie2.setText("- Dátum 2. dávky: " + datumPrvadavka + "\n  Vakcína: " + firma);
+                ockovanie2.setText("- Dátum 2. dávky: " + datumDruhadavka + "\n  Vakcína: " + firma);
             }
         }
         menoapriezvisko = frameLayout.findViewById(R.id.menoapriezvisko);
@@ -98,7 +98,7 @@ public class InfoFragment extends Fragment {
         });
         testyGridView = frameLayout.findViewById(R.id.testyGridView);
         List<Map<String, String>> data = new ArrayList<Map<String, String>>();
-        for (int i = 0; i < testy.size(); i++) {
+        for (int i = testy.size()-1; i >= 0; i--) {
             Map<String, String> datum = new HashMap<String, String>(3);
             datum.put("FL", testy.get(i));
             datum.put("SL", testyDetail.get(i).split(",")[0]);
