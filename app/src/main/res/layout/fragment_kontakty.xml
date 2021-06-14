@@ -272,6 +272,41 @@
                     android:textSize="30sp"
                     android:textStyle="bold" />
             </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+            <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/siva2"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:corner_radius="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:text="NCZI"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/ncziMail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:clickable="true"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:text="nczi@gmail.com"
+                    android:autoLink="email"
+                    android:textColorLink="#C03B2F"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+            </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
