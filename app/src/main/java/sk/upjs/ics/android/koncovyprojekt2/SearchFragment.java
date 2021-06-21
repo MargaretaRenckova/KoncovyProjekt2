@@ -2,6 +2,8 @@ package sk.upjs.ics.android.koncovyprojekt2;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
+import android.os.Message;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import org.json.JSONObject;
+
+import java.io.DataOutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 import static sk.upjs.ics.android.koncovyprojekt2.Defaults.DISMISS_ACTION;
 
 
@@ -20,6 +29,12 @@ public class SearchFragment extends Fragment {
     private EditText birthNumber;
     private EditText covidPass;
     private Button buttonOdosli;
+    public static String menoString;
+    public static String cisloString;
+    public static String datumnarString;
+    public static String rodcisloString;
+    public static String covidPassString;
+
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View frameLayout = inflater.inflate(R.layout.fragment_search, container, false);
@@ -32,11 +47,11 @@ public class SearchFragment extends Fragment {
         buttonOdosli.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String menoString= String.valueOf(name.getText());
-                String cisloString= String.valueOf(phone.getText());
-                String datumnarString= String.valueOf(dateOfBirth.getText());
-                String rodcisloString=String.valueOf(birthNumber.getText());
-                String covidPassString=String.valueOf(covidPass.getText());
+                menoString= String.valueOf(name.getText());
+                cisloString= String.valueOf(phone.getText());
+                datumnarString= String.valueOf(dateOfBirth.getText());
+                rodcisloString=String.valueOf(birthNumber.getText());
+                covidPassString=String.valueOf(covidPass.getText());
                 LayoutInflater inflanter = getLayoutInflater();
                 View x = inflanter.inflate(R.layout.odoslat, null);
                 AlertDialog.Builder builder= new AlertDialog.Builder(getActivity(),R.style.DialogTheme);
@@ -58,7 +73,7 @@ public class SearchFragment extends Fragment {
 
 
                 builder.setPositiveButton("Odoslať", (dialog, which) -> {
-
+                    createMsg();
                 });
                 builder.setNegativeButton("Zrušiť", DISMISS_ACTION);
                 builder.show();
@@ -68,5 +83,9 @@ public class SearchFragment extends Fragment {
         return frameLayout;
     }
 
+    private void createMsg() {
+        AsyncT asyncT = new AsyncT();
+        asyncT.sendPost();
+    }
 
 }
