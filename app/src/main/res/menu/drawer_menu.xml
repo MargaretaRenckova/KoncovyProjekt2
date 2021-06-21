@@ -7,7 +7,7 @@
         <item
             android:id="@+id/testy"
             android:icon="@drawable/test"
-            android:title="Moje testy" />
+            android:title="Môj profil" />
 
         <item
         android:id="@+id/telefon"
