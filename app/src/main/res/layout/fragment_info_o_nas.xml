@@ -14,78 +14,99 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="5dp">
+
             <ImageView
                 android:layout_width="250dp"
                 android:layout_height="250dp"
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:src="@drawable/logoinfoonas" />
+                android:layout_marginTop="10dp"
+                android:src="@drawable/image_1" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:gravity="center"
                 android:text="Aplikácia Covid-19"
-                android:textColor="#B36B6B"
+                android:textColor="@color/purple_700"
                 android:textSize="28sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/montserrat_medium"
                 android:gravity="center"
                 android:text="Verzia: 1.0"
                 android:textColor="#000000"
                 android:textSize="20dp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
                 android:gravity="center"
                 android:text="Copyright © 2021"
                 android:textColor="#000000"
                 android:textSize="20dp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
                 android:gravity="center"
                 android:text="Natália Petrová &amp; Margaréta Renčková"
                 android:textColor="#000000"
                 android:textSize="20dp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
                 android:gravity="center"
                 android:text="Dáta a štatistiky sú načítavané z verejne dostupných zdrojov"
                 android:textColor="#000000"
                 android:textSize="20dp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:fontFamily="@font/montserrat_medium"
                 android:gravity="center"
                 android:text="Kontakt"
-                android:textColor="#B36B6B"
+                android:textColor="@color/purple_700"
                 android:textSize="28sp"
                 android:textStyle="bold" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:autoLink="email"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
                 android:text="Privítame akúkoľvek spätnú väzbu (upozornenia na chyby, námety na zlepšenia, podnety) na adrese podnety@covid19.sk"
                 android:textColor="#000000"
                 android:textSize="20dp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="100dp"
                 android:autoLink="email"
+                android:fontFamily="@font/montserrat_medium"
                 android:gravity="bottom|center"
                 android:text="Copyright 2021 ©"
                 android:textColor="#000000"
                 android:textSize="15dp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autoLink="email"
+                android:fontFamily="@font/montserrat_medium"
                 android:gravity="bottom|center"
                 android:text="Natália Petrová &amp; Margaréta Renčková"
                 android:textColor="#000000"

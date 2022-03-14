@@ -13,9 +13,11 @@
             android:paddingTop="16dp"
             android:paddingRight="16dp"
             android:paddingBottom="16dp">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
                 android:gravity="center"
                 android:text="Profil užívateľa"
                 android:textColor="@color/purple_700"
@@ -29,9 +31,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
                         android:text="Meno: "
                         android:textColor="@color/black"
                         android:textSize="20dp" />
@@ -46,9 +50,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
                         android:text="Priezvisko: "
                         android:textColor="@color/black"
                         android:textSize="20dp" />
@@ -64,8 +70,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Očkovanie"
                 android:layout_marginTop="20dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Očkovanie"
                 android:textColor="@color/purple_700"
                 android:textSize="25dp" />
             <TextView
@@ -86,8 +93,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Testy"
                 android:layout_marginTop="20dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Testy"
                 android:textColor="@color/purple_700"
                 android:textSize="25dp" />
             <ListView

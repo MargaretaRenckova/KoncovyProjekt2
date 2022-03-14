@@ -11,24 +11,23 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="15dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_medium"
-                android:text="Poučenie pre osoby s pozitívnym výsledkom vyšetrenia testu na COVID-19
-        a osoby žijúce s nimi v spoločnej domácnosti
-        "
-                android:textColor="@color/purple_500"
-                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Poučenie pre osoby s pozitívnym výsledkom vyšetrenia testu na COVID-19  a osoby žijúce s nimi v spoločnej domácnosti         "
+                android:textColor="@color/purple_500"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:autoLink="web"
                 android:fontFamily="@font/montserrat_medium"
                 android:justificationMode="inter_word"
                 android:text="• izoláciu v domácom alebo inom vhodnom ubytovaní, opatrenia zamerané na obmedzenie fyzického kontaktu, vrátane neprijímania cudzej osoby v obydlí, resp. objekte určenom na izoláciu \n \n• zákaz stretávania sa s inými osobami okrem osôb v spoločnej domácnosti, zákaz cestovania \n \n• v karanténe sú súčasne všetky úzke kontakty s pozitívnym na COVID-19, najmä osoby žijúce v spoločnej domácnosti\n \n• o výsledku testu informujte svojho všeobecného lekára (v prípade dieťaťa všeobecného lekára pre deti a dorast) telefonicky, mailom, SMS a pod. \n \n• denné sledovanie vlastných príznakov typických pre ochorenie COVID-19 (aspoň jedného z príznakov: kašeľ, dýchavičnosť, horúčka, strata chuti alebo čuchu) \n \n• denné meranie a zaznamenávanie teploty \n \n • prísnu hygienu rúk a nosenie rúšok \n \n• všetky opatrenia špecifikované na https://korona.gov.sk časť „Čo mám robiť keď som Covid 19 pozit“ a „Čo mám robiť, keď som bol v úzkom kontakte s Covid 19 pozit osobou“ "
-                android:autoLink="web"
                 android:textColor="#000000" />
         </LinearLayout>
     </ScrollView>
